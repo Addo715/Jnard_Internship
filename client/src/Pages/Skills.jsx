@@ -1,9 +1,10 @@
-import React from "react";
-import React, { useState } from 'react';
+import React, { useState } from "react";
+// import React, { useState } from 'react';
 
 
-const SkillsSelection = () => {
+const Skills = () => {
   const [selectedSkills, setSelectedSkills] = useState(['Design', 'Coding', 'Project Management']);
+
 
   const allSkills = [
     'Design', 'Coding', 'Marketing', 'Writing', 
