@@ -5,7 +5,7 @@ const Hero = () => {
     <div className="bg-gray-50">
       {/* Hero Section */}
       <main className="px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-[80rem] mx-auto">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
             {/* Left Content */}
             <div className="flex-1 max-w-2xl text-center lg:text-left">
@@ -26,7 +26,7 @@ const Hero = () => {
 
             {/* Right Illustration */}
             <div className="flex-1 flex justify-center lg:justify-end">
-              <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
+              <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] xl:w-[32rem] xl:h-[32rem] 2xl:w-[36rem] 2xl:h-[36rem]">
                 {/* SVG background */}
                 <svg
                   className="absolute inset-0 w-full h-full"
@@ -45,7 +45,7 @@ const Hero = () => {
                   <img
                     src="/TeamImage.png"
                     alt="Team illustration"
-                    className="max-w-full max-h-full object-contain"
+                    className="w-full h-full object-contain max-w-full max-h-full"
                   />
                 </div>
               </div>
