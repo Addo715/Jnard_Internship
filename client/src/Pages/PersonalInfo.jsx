@@ -1,68 +1,104 @@
 import React from "react";
 import Button from "../Components/Button";
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const PersonalInfo = () => {
-  // const navigate = useNavigate();
-
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 p-6">
-      {/* Card container */}
-      <div className="bg-white shadow-lg rounded-xl p-8 flex flex-col lg:flex-row w-full max-w-5xl gap-10">
-        {/* Left section: form fields */}
-        <div className="flex flex-col w-full lg:w-1/2 space-y-4">
-          <div>
-            <p className="text-sm">Step 1 of 5</p>
-            <h1 className="text-3xl font-bold">Sign Up</h1>
+    <div className="min-h-screen bg-gray-50">
+      {/* Main Content */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          
+          {/* Left Content */}
+          <div className="lg:col-span-2">
+            <div className="bg-white rounded-lg shadow-sm p-8">
+              {/* Progress Steps */}
+              <div className="mb-8">
+                <div className="flex items-center space-x-4 text-sm mb-2">
+                  <span className="text-blue-500 font-medium">1. Personal Info</span>
+                  <span className="text-gray-400">2. Education</span>
+                  <span className="text-gray-400">3. Skills</span>
+                  <span className="text-gray-400">4. Uploads</span>
+                  <span className="text-gray-400">5. Review</span>
+                </div>
+              </div>
+
+              {/* Sign Up Header */}
+              <div className="mb-6">
+                <h1 className="text-3xl font-bold text-gray-900 mb-2">Sign Up</h1>
+                <p className="text-gray-600">Step 1 of 5</p>
+              </div>
+
+              {/* Personal Info Form */}
+              <div className="mb-8">
+                <h2 className="text-2xl font-semibold text-gray-900 mb-6">Personal Information</h2>
+                
+                <div className="space-y-6">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Full Name
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="Enter Your Full Name"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Email
+                    </label>
+                    <input
+                      type="email"
+                      placeholder="Enter Your Email"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Phone Number
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="Enter Your Phone Number"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Date of Birth
+                    </label>
+                    <input
+                      type="date"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* Navigation Buttons */}
+              <div className="flex justify-end">
+                <Link to="/education">
+                  <button className="px-8 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors">
+                    Continue
+                  </button>
+                </Link>
+              </div>
+            </div>
           </div>
 
-          <label>
-            Full Name
-            <input
-              type="text"
-              placeholder="Enter Your Full Name"
-              className="w-full border p-2 rounded mt-1"
-            />
-          </label>
-
-          <label>
-            Email
-            <input
-              type="email"
-              placeholder="Enter Your Email"
-              className="w-full border p-2 rounded mt-1"
-            />
-          </label>
-
-          <label>
-            Phone Number
-            <input
-              type="text"
-              placeholder="Enter Your Phone Number"
-              className="w-full border p-2 rounded mt-1"
-            />
-          </label>
-
-          <label>
-            Date of Birth
-            <input type="date" className="w-full border p-2 rounded mt-1" />
-          </label>
-
-          <Link to="/education">
-          <div>
-            <Button label="Continue" />
+          {/* Right section: Why join internship */}
+          <div className="hidden lg:flex w-[25rem] bg-blue-500 text-white flex-col justify-center rounded-lg p-6">
+            <h2 className="text-xl font-bold mb-4">Why Join Our Internship?</h2>
+            <ul className="list-disc pl-5 space-y-2">
+              <li>Gain valuable hands-on experience</li>
+              <li>Learn from experienced mentors</li>
+              <li>Build your professional network</li>
+            </ul>
           </div>
-          </Link>
-        </div>
-
-        {/* Right section: Why join internship (hidden on small screens) */}
-        <div className="hidden lg:flex w-1/2 bg-blue-500 text-white flex-col justify-center rounded-lg p-6">
-          <h2 className="text-xl font-bold mb-4">Why Join Our Internship?</h2>
-          <ul className="list-disc pl-5 space-y-2">
-            <li>Gain valuable hands-on experience</li>
-            <li>Learn from experienced mentors</li>
-            <li>Build your professional network</li>
-          </ul>
         </div>
       </div>
     </div>

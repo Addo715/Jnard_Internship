@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-// import React, { useState } from 'react';
-
 
 const Skills = () => {
   const [selectedSkills, setSelectedSkills] = useState(['Design', 'Coding', 'Project Management']);
-
 
   const allSkills = [
     'Design', 'Coding', 'Marketing', 'Writing', 
@@ -72,7 +69,7 @@ const Skills = () => {
 
                 {/* Selected Skills Display */}
                 <div className="mb-8">
-                  <h3 className="text-lg font-medium text-gray-900 mb-4">Skills</h3>
+                  <h3 className="text-lg font-medium text-gray-900 mb-4">Selected Skills</h3>
                   <div className="flex flex-wrap gap-3">
                     {selectedSkills.map((skill) => (
                       <div
@@ -88,32 +85,32 @@ const Skills = () => {
 
               {/* Navigation Buttons */}
               <div className="flex justify-between">
-                <Link to="">
-                <button className="px-6 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors">
-                  Back
-                </button>
+                <Link to="/education">
+                  <button className="px-6 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors">
+                    Back
+                  </button>
                 </Link>
 
                 <Link to="/upload">
-                <button className="px-8 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-500 transition-colors">
-                  Next
-                </button>
+                  <button className="px-8 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors">
+                    Next
+                  </button>
                 </Link>
               </div>
             </div>
           </div>
 
-           {/* Right section: Why join internship */}
-        <div className="hidden lg:flex w-1/2 bg-blue-500 text-white flex-col justify-center rounded-lg p-6">
-          <h2 className="text-xl font-bold mb-4">Why Join Our Internship?</h2>
-          <ul className="list-disc pl-5 space-y-2">
-            <li>Gain valuable hands-on experience</li>
-            <li>Learn from experienced mentors</li>
-            <li>Build your professional network</li>
-          </ul>
+          {/* Right section: Why join internship */}
+          <div className="hidden lg:flex w-[25rem] bg-blue-500 text-white flex-col justify-center rounded-lg p-6">
+            <h2 className="text-xl font-bold mb-4">Why Join Our Internship?</h2>
+            <ul className="list-disc pl-5 space-y-2">
+              <li>Gain valuable hands-on experience</li>
+              <li>Learn from experienced mentors</li>
+              <li>Build your professional network</li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
     </div>
   );
 };
