@@ -14,12 +14,12 @@ const PersonalInfo = () => {
             <div className="bg-white rounded-lg shadow-sm p-8">
               {/* Progress Steps */}
               <div className="mb-8">
-                <div className="flex items-center space-x-4 text-sm mb-2">
-                  <span className="text-blue-500 font-medium">1. Personal Info</span>
-                  <span className="text-gray-400">2. Education</span>
-                  <span className="text-gray-400">3. Skills</span>
-                  <span className="text-gray-400">4. Uploads</span>
-                  <span className="text-gray-400">5. Review</span>
+                <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-xs sm:text-sm mb-2">
+                  <span className="text-blue-500 font-medium whitespace-nowrap">1. Personal Info</span>
+                  <span className="text-gray-400 whitespace-nowrap">2. Education</span>
+                  <span className="text-gray-400 whitespace-nowrap">3. Skills</span>
+                  <span className="text-gray-400 whitespace-nowrap">4. Uploads</span>
+                  <span className="text-gray-400 whitespace-nowrap">5. Review</span>
                 </div>
               </div>
 

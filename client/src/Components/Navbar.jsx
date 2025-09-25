@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -13,35 +13,59 @@ const Navbar = () => {
     setIsSidebarOpen(false);
   };
 
+  // Function to handle smooth scrolling to sections
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+    closeSidebar(); // Close sidebar after clicking (for mobile)
+  };
+
   return (
     <>
-      <nav className="w-full bg-white shadow-sm border-b">
+      <nav className="sticky top-0 z-30 w-full bg-white shadow-sm">
         <div className="max-w-7xl mx-auto flex items-center justify-between py-4 px-6">
           
           {/* Logo / Company Name */}
           <div className="text-2xl font-semibold text-blue-600">
-            <Link to="/">Jnard IT Consult</Link>
+            <Link to='/'>
+            <button onClick={() => scrollToSection('home')} className="hover:text-blue-700 cursor-pointer">
+              Jnard IT Consult
+            </button>
+            </Link>
           </div>
 
           {/* Center Nav Links - Hidden on mobile and tablet */}
           <div className="hidden lg:flex space-x-8 text-gray-700 font-medium">
-            <Link to="/" className="hover:text-blue-600">Home</Link>
-            <Link to="/about" className="hover:text-blue-600">About</Link>
-            <Link to="/careers" className="hover:text-blue-600">Careers</Link>
-            <Link to="/contact" className="hover:text-blue-600">Contact</Link>
+            <button onClick={() => scrollToSection('home')} className="hover:text-blue-600 cursor-pointer">
+              Home
+            </button>
+            <button onClick={() => scrollToSection('about')} className="hover:text-blue-600  cursor-pointer">
+              About
+            </button>
+            <button onClick={() => scrollToSection('faq')} className="hover:text-blue-600  cursor-pointer">
+              FAQ
+            </button>
+            <button onClick={() => scrollToSection('contact')} className="hover:text-blue-600  cursor-pointer">
+              Contact
+            </button>
           </div>
 
           {/* Right side buttons - Hidden on mobile and tablet */}
           <div className="hidden lg:flex items-center space-x-4">
-            <Link to="/login" className="text-gray-700 hover:text-blue-600">
+            <a href="/login" className="text-gray-700 hover:text-blue-600  cursor-pointer">
               Log in
-            </Link>
-            <Link
-              to="/signup"
-              className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
+            </a>
+            <a
+              href="/signup"
+              className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition  cursor-pointer"
             >
               Sign Up
-            </Link>
+            </a>
           </div>
 
           {/* Mobile/Tablet Menu Button */}
@@ -57,10 +81,12 @@ const Navbar = () => {
 
       {/* Sidebar Overlay */}
       {isSidebarOpen && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
-          onClick={closeSidebar}
-        />
+      <div
+  className="fixed inset-0 z-50"
+  style={{ backgroundColor: "rgba(255,255,255,.5)" }}
+  onClick={closeSidebar}
+/>
+
       )}
 
       {/* Sidebar */}
@@ -70,10 +96,12 @@ const Navbar = () => {
         }`}
       >
         {/* Sidebar Header */}
-        <div className="flex items-center justify-between p-6 border-b">
-          <div className="text-xl font-semibold text-blue-600">
+        <div className="flex items-center justify-between p-6 shadow-sm">
+          <Link to='/'>
+          <div className="text-xl font-semibold text-blue-600  cursor-pointer">
             Jnard IT Consult
           </div>
+          </Link>
           <button
             onClick={closeSidebar}
             className="p-2 rounded-md hover:bg-gray-100 transition-colors"
@@ -87,52 +115,46 @@ const Navbar = () => {
         <div className="flex flex-col p-6">
           {/* Navigation Links */}
           <div className="space-y-4 mb-8">
-            <Link
-              to="/"
-              className="block text-lg text-gray-700 hover:text-blue-600 py-2 border-b border-gray-100"
-              onClick={closeSidebar}
+            <button
+              onClick={() => scrollToSection('home')}
+              className="block w-full text-left text-lg text-gray-700 hover:text-blue-600 py-2 border-b border-gray-100  cursor-pointer"
             >
               Home
-            </Link>
-            <Link
-              to="/about"
-              className="block text-lg text-gray-700 hover:text-blue-600 py-2 border-b border-gray-100"
-              onClick={closeSidebar}
+            </button>
+            <button
+              onClick={() => scrollToSection('about')}
+              className="block w-full text-left text-lg text-gray-700 hover:text-blue-600 py-2 border-b border-gray-100  cursor-pointer"
             >
               About
-            </Link>
-            <Link
-              to="/careers"
-              className="block text-lg text-gray-700 hover:text-blue-600 py-2 border-b border-gray-100"
-              onClick={closeSidebar}
+            </button>
+            <button
+              onClick={() => scrollToSection('faq')}
+              className="block w-full text-left text-lg text-gray-700 hover:text-blue-600 py-2 border-b border-gray-100  cursor-pointer"
             >
-              Careers
-            </Link>
-            <Link
-              to="/contact"
-              className="block text-lg text-gray-700 hover:text-blue-600 py-2 border-b border-gray-100"
-              onClick={closeSidebar}
+              FAQ
+            </button>
+            <button
+              onClick={() => scrollToSection('contact')}
+              className="block w-full text-left text-lg text-gray-700 hover:text-blue-600 py-2 border-b border-gray-100  cursor-pointer"
             >
               Contact
-            </Link>
+            </button>
           </div>
 
           {/* Auth Buttons */}
           <div className="space-y-4">
-            <Link
-              to="/login"
-              className="block w-full text-center py-3 text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
-              onClick={closeSidebar}
+            <a
+              href="/login"
+              className="block w-full text-center py-3 text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors  cursor-pointer"
             >
               Log in
-            </Link>
-            <Link
-              to="/signup"
-              className="block w-full text-center py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-              onClick={closeSidebar}
+            </a>
+            <a
+              href="/signup"
+              className="block w-full text-center py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors  cursor-pointer"
             >
               Sign Up
-            </Link>
+            </a>
           </div>
         </div>
       </div>
