@@ -105,10 +105,10 @@ const SkillsSelection = () => {
             <li>Build your professional network</li>
           </ul>
         </div>
-        </div>
       </div>
+    </div>
     </div>
   );
 };
 
-export default SkillsSelection;
+export default Skills;
