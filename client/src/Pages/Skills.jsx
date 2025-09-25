@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 // import React, { useState } from 'react';
 
 
@@ -87,12 +88,17 @@ const Skills = () => {
 
               {/* Navigation Buttons */}
               <div className="flex justify-between">
+                <Link to="">
                 <button className="px-6 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors">
                   Back
                 </button>
+                </Link>
+
+                <Link to="/upload">
                 <button className="px-8 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-500 transition-colors">
                   Next
                 </button>
+                </Link>
               </div>
             </div>
           </div>

@@ -1,11 +1,9 @@
 import React from "react";
 import Button from "../Components/Button";
 import BackButton from "../Components/BackButton";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Education = () => {
-  const navigate = useNavigate();
-
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 p-6">
       {/* Card container */}
@@ -45,11 +43,13 @@ const Education = () => {
           </label>
 
           <div className="flex justify-between">
-            <BackButton
-              label="Back"
-              onClick={() => navigate("/personalinfo")}
-            />
-            <Button label="Continue" onClick={() => navigate("/upload")} />
+            <Link to="/personal-info">
+              <BackButton label="Back" />
+            </Link>
+
+            <Link to="/skills">
+              <Button label="Continue" />
+            </Link>
           </div>
         </div>
 

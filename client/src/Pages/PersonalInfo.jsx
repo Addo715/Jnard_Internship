@@ -1,9 +1,9 @@
 import React from "react";
 import Button from "../Components/Button";
-import { useNavigate } from "react-router-dom";
+import { Link} from "react-router-dom";
 
 const PersonalInfo = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 p-6">
@@ -48,9 +48,11 @@ const PersonalInfo = () => {
             <input type="date" className="w-full border p-2 rounded mt-1" />
           </label>
 
+          <Link to="/education">
           <div>
-            <Button label="Continue" onClick={() => navigate("/education")} />
+            <Button label="Continue" />
           </div>
+          </Link>
         </div>
 
         {/* Right section: Why join internship (hidden on small screens) */}

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -19,9 +20,12 @@ const Hero = () => {
                 <br />
                 and grow with mentors.
               </p>
-              <button className="px-8 py-3 sm:px-10 sm:py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-medium text-base sm:text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-1000">
+
+              <Link to="/personal-info">
+              <button className="px-8 py-3 sm:px-10 sm:py-4 bg-blue-600 cursor-pointer text-white rounded-lg hover:bg-blue-700 font-medium text-base sm:text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-1000">
                 Apply Now
               </button>
+              </Link>
             </div>
 
             {/* Right Illustration */}
