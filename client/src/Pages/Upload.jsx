@@ -68,16 +68,14 @@ const Upload = () => {
                   <span className="text-blue-500 font-medium whitespace-nowrap">
                     4. Uploads
                   </span>{" "}
-                  <span className="text-blue-500 font-medium whitespace-nowrap">
+                  <span className="text-gray-500 font-medium whitespace-nowrap">
                     5. Review
                   </span>
                 </div>
               </div>
 
               <div className="mb-6">
-                <h1 className="text-3xl font-bold text-gray-900 mb-2">
-                  Sign Up
-                </h1>
+              
                 <p className="text-gray-600">Step 4 of 4</p>
               </div>
 
