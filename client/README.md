@@ -30,3 +30,4 @@ As an admin;
                  [Below are feature to be added to the app]
 7.	*****I want to generate reports (e.g., number of students placed, most popular companies) so that we can measure impact.*****
 8.	*****I want to automatically issue and sign digital certificates after internship completion so that students receive verified proof of completion.*****
+
