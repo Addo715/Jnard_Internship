@@ -71,17 +71,17 @@ const Navbar = () => {
 
           {/* Desktop Auth Buttons - Hidden on mobile and tablet */}
           <div className="hidden lg:flex items-center space-x-4">
-            <Link
+            {/* <Link
               to="/login"
               className="text-gray-700 hover:text-blue-600 cursor-pointer"
             >
               Log in
-            </Link>
+            </Link> */}
             <Link
-              to="/signup"
+              to="/login"
               className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition cursor-pointer"
             >
-              Sign Up
+             Get Started
             </Link>
           </div>
 
@@ -158,19 +158,19 @@ const Navbar = () => {
 
           {/* Mobile Auth Buttons */}
           <div className="mb-[5rem]">
-            <Link
-              to="/Education"
+            {/* <Link
+              to="/login"
               className="block w-full text-center py-3 mb-5 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors cursor-pointer"
               onClick={closeSidebar}
             >
-              Log in
-            </Link>
+              Get Started
+            </Link> */}
             <Link
-              to="/signup"
+              to="/login"
               className="block w-full text-center py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors cursor-pointer"
               onClick={closeSidebar}
             >
-              Sign Up
+              Get Started
             </Link>
           </div>
         </div>
